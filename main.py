@@ -158,7 +158,6 @@ async def main():
             print('Sell')
         print(predicted_label ,'ORM NONE')
         print('start end')
-        await asyncio.sleep(3600)  # Run the strategy every hour
 
 if __name__ == '__main__':
     asyncio.run(main())
