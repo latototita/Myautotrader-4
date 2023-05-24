@@ -2,3 +2,5 @@ scipy
 numpy
 metaapi-cloud-sdk
 scikit-learn
+pandas
+pandas_ta
