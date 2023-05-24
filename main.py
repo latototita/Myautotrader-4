@@ -115,7 +115,9 @@ async def main():
         await connection.wait_synchronized()
         print('start')
         # Fetch candlestick data
+        print('getting candles')
         data = await account.get_historical_candles(symbol=symbol, timeframe='1m', start_time=None, limit=100)
+        print(data)
         df = pd.DataFrame(data['candles'])
         df['time'] = pd.to_datetime(df['time'])
         df.set_index('time', inplace=True)
@@ -158,6 +160,6 @@ async def main():
             print('Sell')
         print(predicted_label ,'ORM NONE')
         print('start end')
+        await asyncio.sleep(3)  # Run the strategy every hour
 
-if __name__ == '__main__':
-    asyncio.run(main())
+asyncio.run(main())
